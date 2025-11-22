@@ -20,7 +20,10 @@ print("=== 图像基本信息 ===")
 print(f"图像形状: {image.shape}")
 print(f"高度: {image.shape[0]} 像素")
 print(f"宽度: {image.shape[1]} 像素")
-print(f"通道数: {image.shape[2]}")
+if len(image.shape) == 3:
+    print(f"通道数: {image.shape[2]}")
+else:
+    print("通道数: 1 (灰度图)")
 print(f"数据类型: {image.dtype}")
 
 # 将图像从 BGR 转换为 RGB（用于 matplotlib 显示）
